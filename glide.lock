@@ -1,0 +1,8 @@
+hash: ce2a10673591b114edb6c599a891ee8c4c84752857587793c4c0f1cc06b76cbf
+updated: 2018-03-27T18:28:55.147162+09:00
+imports:
+- name: github.com/aws/aws-sdk-go
+  version: fb28e64a158b01377883badcc176216ac0fde3dd
+- name: github.com/labstack/echo
+  version: a5d81b8d4a627f3f49dcb3164ef2bb5239682227
+testImports: []
