@@ -1,6 +1,6 @@
 package: github.com/atsushi-ishibashi/go-aws-resolver
 import:
-- package: github.com/labstack/echo
-  version: ^3.3.4
 - package: github.com/aws/aws-sdk-go
   version: ^1.13.21
+- package: github.com/labstack/echo
+  version: ^3.3.4

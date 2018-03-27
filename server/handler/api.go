@@ -1,6 +1,8 @@
 package handler
 
-import "github.com/atsushi-ishibashi/go-aws-resolver/svc"
+import (
+	"github.com/atsushi-ishibashi/go-aws-resolver/svc"
+)
 
 type APIHandler struct {
 	ssmClient *svc.SsmClient

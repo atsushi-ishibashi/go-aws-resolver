@@ -1,8 +1,66 @@
-hash: ce2a10673591b114edb6c599a891ee8c4c84752857587793c4c0f1cc06b76cbf
-updated: 2018-03-27T18:28:55.147162+09:00
+hash: 2a4b546ca55c97d31dc3d98cfff4251db61728ad03283def342e02221a0e3356
+updated: 2018-03-27T19:52:58.669856+09:00
 imports:
 - name: github.com/aws/aws-sdk-go
   version: fb28e64a158b01377883badcc176216ac0fde3dd
+  subpackages:
+  - aws
+  - aws/awserr
+  - aws/awsutil
+  - aws/client
+  - aws/client/metadata
+  - aws/corehandlers
+  - aws/credentials
+  - aws/credentials/ec2rolecreds
+  - aws/credentials/endpointcreds
+  - aws/credentials/stscreds
+  - aws/defaults
+  - aws/ec2metadata
+  - aws/endpoints
+  - aws/request
+  - aws/session
+  - aws/signer/v4
+  - internal/sdkio
+  - internal/sdkrand
+  - internal/shareddefaults
+  - private/protocol
+  - private/protocol/json/jsonutil
+  - private/protocol/jsonrpc
+  - private/protocol/query
+  - private/protocol/query/queryutil
+  - private/protocol/rest
+  - private/protocol/xml/xmlutil
+  - service/rds
+  - service/rds/rdsiface
+  - service/ssm
+  - service/ssm/ssmiface
+  - service/sts
+- name: github.com/go-ini/ini
+  version: 6ecc596bd756a16c6e93e4ef9225ecdb9f54ed2c
+- name: github.com/jmespath/go-jmespath
+  version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
 - name: github.com/labstack/echo
   version: a5d81b8d4a627f3f49dcb3164ef2bb5239682227
+- name: github.com/labstack/gommon
+  version: 6fe1405d73ec4bd4cd8a4ac8e2a2b2bf95d03954
+  subpackages:
+  - color
+  - log
+- name: github.com/mattn/go-colorable
+  version: efa589957cd060542a26d2dd7832fd6a6c6c3ade
+- name: github.com/mattn/go-isatty
+  version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
+- name: github.com/valyala/bytebufferpool
+  version: e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7
+- name: github.com/valyala/fasttemplate
+  version: dcecefd839c4193db0d35b88ec65b4c12d360ab0
+- name: golang.org/x/crypto
+  version: c3a3ad6d03f7a915c0f7e194b7152974bb73d287
+  subpackages:
+  - acme
+  - acme/autocert
+- name: golang.org/x/sys
+  version: d8e400bc7db4870d786864138af681469693d18c
+  subpackages:
+  - unix
 testImports: []

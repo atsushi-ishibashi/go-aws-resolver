@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 
+	"github.com/atsushi-ishibashi/go-aws-resolver/server/handler"
 	"github.com/labstack/echo"
 )
 
@@ -12,6 +13,8 @@ func main() {
 	flag.Parse()
 
 	e := echo.New()
+
+	_ = handler.NewAPIHandler(*region)
 
 	e.Logger.Fatal(e.Start(":" + *port))
 }

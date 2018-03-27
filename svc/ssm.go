@@ -17,13 +17,9 @@ func NewSsmClient(region string) *SsmClient {
 	}
 }
 
-func (c *SsmClient) GetParameter(name string) (string, error) {
-	resp, err := c.svc.GetParameter(&ssm.GetParameterInput{
+func (c *SsmClient) GetParameter(name string) (*ssm.GetParameterOutput, error) {
+	return c.svc.GetParameter(&ssm.GetParameterInput{
 		Name:           aws.String(name),
 		WithDecryption: aws.Bool(true),
 	})
-	if err != nil {
-		return "", err
-	}
-	return *resp.Parameter.Value, nil
 }
