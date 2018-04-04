@@ -1,6 +1,10 @@
-hash: 08681fd7b4744e9376c573cd2581341fcf9e165eba838afd6aaa7cf49aba6d8e
-updated: 2018-04-04T16:46:34.960265+09:00
+hash: c021d2b20d1849430e38002516dce59f26210f02dcd3c2621a8e77bd0428b478
+updated: 2018-04-04T16:45:56.766908+09:00
 imports:
+- name: github.com/atsushi-ishibashi/go-aws-resolver
+  version: ec485d1cabfa862e669980a1a5f2beaeeaf15041
+  subpackages:
+  - svc
 - name: github.com/aws/aws-sdk-go
   version: f6efafab9ddced9880456bc53096fa79f4596f5e
   subpackages:
@@ -32,8 +36,6 @@ imports:
   - private/protocol/xml/xmlutil
   - service/rds
   - service/rds/rdsiface
-  - service/sqs
-  - service/sqs/sqsiface
   - service/ssm
   - service/ssm/ssmiface
   - service/sts
