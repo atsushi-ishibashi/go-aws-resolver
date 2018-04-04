@@ -1,0 +1,6 @@
+package: github.com/atsushi-ishibashi/go-aws-resolver/server
+import:
+- package: github.com/atsushi-ishibashi/go-aws-resolver
+- package: github.com/labstack/echo
+  subpackages:
+  - middleware

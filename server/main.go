@@ -5,6 +5,7 @@ import (
 
 	"github.com/atsushi-ishibashi/go-aws-resolver/server/handler"
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
 
 func main() {
@@ -13,8 +14,13 @@ func main() {
 	flag.Parse()
 
 	e := echo.New()
+	e.HideBanner = true
+	e.Use(middleware.Recover())
 
-	_ = handler.NewAPIHandler(*region)
+	hdl := handler.NewAPIHandler(*region)
+	e.GET("/rds/:cluster", hdl.RdsCluster)
+	e.GET("/ssm/parameter", hdl.SsmParameter)
+	e.GET("/sqs/:queue/url", hdl.SqsQueueURL)
 
 	e.Logger.Fatal(e.Start(":" + *port))
 }

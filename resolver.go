@@ -4,12 +4,14 @@ import "github.com/atsushi-ishibashi/go-aws-resolver/svc"
 
 type Resolver struct {
 	ssmClient *svc.SsmClient
+	sqsClient *svc.SqsClient
 	rdsClient *svc.RdsClient
 }
 
 func NewResolver(region string) *Resolver {
 	return &Resolver{
 		ssmClient: svc.NewSsmClient(region),
+		sqsClient: svc.NewSqsClient(region),
 		rdsClient: svc.NewRdsClient(region),
 	}
 }
@@ -30,10 +32,18 @@ func (r *Resolver) GetRdsCluster(cluster string) (*GetRdsClusterOutput, error) {
 		return nil, err
 	}
 	return &GetRdsClusterOutput{
-		DatabaseName:   resp.DatabaseName,
-		Endpoint:       resp.Endpoint,
 		MasterUsername: resp.MasterUsername,
 		Port:           resp.Port,
 		ReaderEndpoint: resp.ReaderEndpoint,
+	}, nil
+}
+
+func (r *Resolver) GetSqsQueueURL(queue string) (*GetSqsQueueURLOutput, error) {
+	resp, err := r.sqsClient.GetQueueURL(queue)
+	if err != nil {
+		return nil, err
+	}
+	return &GetSqsQueueURLOutput{
+		QueueURL: resp.QueueUrl,
 	}, nil
 }
