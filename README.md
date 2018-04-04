@@ -1,5 +1,8 @@
 # AWS Resolver
-awsresolver is package to resolve configs, ex RDS endpoint, SSM parameter, SQS QueueURL...
+[![GoDoc](https://godoc.org/github.com/atsushi-ishibashi/go-aws-resolver?status.svg)](https://godoc.org/github.com/atsushi-ishibashi/go-aws-resolver)
+
+awsresolver is package to resolve configs and endpoins, ex RDS endpoint, SSM parameter, SQS QueueURL...
+
 [HTTP Server](server/README.md)
 ## Installing
 ```

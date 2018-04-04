@@ -32,6 +32,7 @@ func (r *Resolver) GetRdsCluster(cluster string) (*GetRdsClusterOutput, error) {
 		return nil, err
 	}
 	return &GetRdsClusterOutput{
+		Endpoint:       resp.Endpoint,
 		MasterUsername: resp.MasterUsername,
 		Port:           resp.Port,
 		ReaderEndpoint: resp.ReaderEndpoint,

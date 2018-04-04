@@ -7,9 +7,10 @@ JSON
 |Method|URI|response model|
 |:----:|:--|:----|
 |GET|/rds/:cluster|GetRdsClusterOutput|
-|GET|/ssm/parameter|GetSsmParameterOutput|
+|GET|/ssm/parameter?name=<name>|GetSsmParameterOutput|
 |GET|/sqs/:queue/url|GetSqsQueueURLOutput|
 ### Docker container
+The size of image is about 10MB.
 ```
-docker build -t .
+docker build -t go-aws-resolver .
 ```
