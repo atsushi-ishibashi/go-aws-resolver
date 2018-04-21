@@ -14,3 +14,13 @@ type GetRdsClusterOutput struct {
 type GetSqsQueueURLOutput struct {
 	QueueURL *string `json:"queue_url"`
 }
+
+type GetElastiCacheReplicationGroupOutput struct {
+	ConfigurationEndpoint string                  `json:"configuration_endpoint"`
+	NodeGroups            []*ElastiCacheNodeGroup `json:"node_groups"`
+}
+
+type ElastiCacheNodeGroup struct {
+	PrimaryEndpoint  string   `json:"configuration_endpoint,omitempty"`
+	ReplicaEndpoints []string `json:"replica_endpoints,omitempty"`
+}

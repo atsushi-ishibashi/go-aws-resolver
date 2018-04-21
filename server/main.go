@@ -21,6 +21,7 @@ func main() {
 	e.GET("/rds/:cluster", hdl.RdsCluster)
 	e.GET("/ssm/parameter", hdl.SsmParameter)
 	e.GET("/sqs/:queue/url", hdl.SqsQueueURL)
+	e.GET("/elasticache/:rg_id", hdl.ElastiCacheReplicationGroup)
 
 	e.Logger.Fatal(e.Start(":" + *port))
 }

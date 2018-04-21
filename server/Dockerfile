@@ -1,11 +1,11 @@
 FROM golang:alpine as builder
-ENV APPDIR $GOPATH/src/github.com/atsushi-ishibashi/go-aws-resolver/server
+ENV APPDIR $GOPATH/src/github.com/atsushi-ishibashi/go-aws-resolver
 RUN \
   apk update && \
   rm -rf /var/cache/apk/* && \
   mkdir -p $APPDIR
 ADD . $APPDIR/
-WORKDIR $APPDIR
+WORKDIR $APPDIR/server
 RUN go build -ldflags "-s -w" -o go-aws-resolver .
 
 FROM alpine

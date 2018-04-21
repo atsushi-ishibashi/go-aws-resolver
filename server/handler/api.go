@@ -45,3 +45,12 @@ func (h *APIHandler) SqsQueueURL(c echo.Context) error {
 	}
 	return c.JSON(http.StatusOK, resp)
 }
+
+//ElastiCacheReplicationGroup GET /elasticache/:rg_id, retrun GetElastiCacheReplicationGroupOutput
+func (h *APIHandler) ElastiCacheReplicationGroup(c echo.Context) error {
+	resp, err := h.resolver.GetElastiCacheReplicationGroup(c.Param("rg_id"))
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return c.JSON(http.StatusOK, resp)
+}

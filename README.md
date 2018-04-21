@@ -31,3 +31,10 @@ required policy:
 "Action": "sqs:GetQueueUrl",
 "Resource": "arn:aws:sqs:<region>:<account>:<queue>"
 ```
+```
+GetElastiCacheReplicationGroup(replicationGroupID string) (*GetElastiCacheReplicationGroupOutput, error)
+
+required policy:
+"Action": "elasticache:DescribeReplicationGroups",
+"Resource": "*"
+```
