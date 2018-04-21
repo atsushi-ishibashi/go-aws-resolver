@@ -13,12 +13,31 @@
 [7]: https://codecov.io/gh/atsushi-ishibashi/go-aws-resolver/branch/master/graph/badge.svg
 [8]: https://codecov.io/gh/atsushi-ishibashi/go-aws-resolver
 
-awsresolver is package to resolve configs and endpoins, ex RDS endpoint, SSM parameter, SQS QueueURL...
+awsresolver is package to resolve AWS service.
 
-[HTTP Server](server/README.md)
+This has docker image as http server. [See](https://hub.docker.com/r/atsushi51/go-aws-resolver/)
+
 ## Installing
 ```
 go get -u github.com/atsushi-ishibashi/go-aws-resolver
+```
+
+# Getting Started
+
+``` Go
+// main.go
+package main
+
+import (
+	awsresolver "github.com/atsushi-ishibashi/go-aws-resolver"
+)
+
+func main() {
+	resolver := awsresolver.NewResolver("ap-northeast-1")
+
+  resp, err := resolver.GetRdsCluster("rds-cluster")
+  // do something
+}
 ```
 
 ## API
