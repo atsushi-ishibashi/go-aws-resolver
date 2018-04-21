@@ -1,0 +1,15 @@
+language: go
+sudo: false
+go:
+  - "1.10.x"
+  - tip
+install:
+  - go get github.com/Masterminds/glide
+  - go get github.com/golang/lint/golint
+script:
+  - glide install
+  - ./scripts/codecov.sh
+  - go vet -v ./...
+  - golint .
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
