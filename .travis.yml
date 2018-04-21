@@ -7,7 +7,7 @@ install:
   - go get github.com/golang/lint/golint
 script:
   - glide install
-  - ./scripts/codecov.sh
+  - sh scripts/codecov.sh
   - go vet -v ./...
   - golint .
 after_success:
