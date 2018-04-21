@@ -9,6 +9,7 @@ JSON
 |GET|/rds/:cluster|GetRdsClusterOutput|
 |GET|/ssm/parameter?name=<name>|GetSsmParameterOutput|
 |GET|/sqs/:queue/url|GetSqsQueueURLOutput|
+|GET|/elasticache/:rg_id|GetElastiCacheReplicationGroupOutput|
 ### Docker container
 The size of image is about 10MB.
 ```

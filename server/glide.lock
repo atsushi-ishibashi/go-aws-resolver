@@ -1,59 +1,14 @@
-hash: 73d00172d0cd40b83563d6afcb7b1c377d43795b35d464d8922915d1ef61448e
-updated: 2018-04-04T16:54:15.911291+09:00
+hash: 82d5b9c783c20157aeb4415a2aee9179e6e2c40c3bd57a8e6fd8f6028b11be0c
+updated: 2018-04-21T20:54:22.560731+09:00
 imports:
-- name: github.com/atsushi-ishibashi/go-aws-resolver
-  version: cc374a76b8944c5fdaf5d9a3e97032a1ee8e66f3
-  subpackages:
-  - server/handler
-  - svc
-- name: github.com/aws/aws-sdk-go
-  version: f6efafab9ddced9880456bc53096fa79f4596f5e
-  subpackages:
-  - aws
-  - aws/awserr
-  - aws/awsutil
-  - aws/client
-  - aws/client/metadata
-  - aws/corehandlers
-  - aws/credentials
-  - aws/credentials/ec2rolecreds
-  - aws/credentials/endpointcreds
-  - aws/credentials/stscreds
-  - aws/defaults
-  - aws/ec2metadata
-  - aws/endpoints
-  - aws/request
-  - aws/session
-  - aws/signer/v4
-  - internal/sdkio
-  - internal/sdkrand
-  - internal/shareddefaults
-  - private/protocol
-  - private/protocol/json/jsonutil
-  - private/protocol/jsonrpc
-  - private/protocol/query
-  - private/protocol/query/queryutil
-  - private/protocol/rest
-  - private/protocol/xml/xmlutil
-  - service/rds
-  - service/rds/rdsiface
-  - service/sqs
-  - service/sqs/sqsiface
-  - service/ssm
-  - service/ssm/ssmiface
-  - service/sts
 - name: github.com/dgrijalva/jwt-go
   version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
-- name: github.com/go-ini/ini
-  version: 5e9692864e22d02ac79e2fa499cffb00520b4fea
-- name: github.com/jmespath/go-jmespath
-  version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
 - name: github.com/labstack/echo
-  version: a5d81b8d4a627f3f49dcb3164ef2bb5239682227
+  version: b338075a0fc6e1a0683dbf03d09b4957a289e26f
   subpackages:
   - middleware
 - name: github.com/labstack/gommon
-  version: 6fe1405d73ec4bd4cd8a4ac8e2a2b2bf95d03954
+  version: 3bc2d333a4c30531c47051369043bcabd62ff4c0
   subpackages:
   - bytes
   - color
@@ -68,12 +23,12 @@ imports:
 - name: github.com/valyala/fasttemplate
   version: dcecefd839c4193db0d35b88ec65b4c12d360ab0
 - name: golang.org/x/crypto
-  version: c3a3ad6d03f7a915c0f7e194b7152974bb73d287
+  version: e73bf333ef8920dbb52ad18d4bd38ad9d9bc76d7
   subpackages:
   - acme
   - acme/autocert
 - name: golang.org/x/sys
-  version: d8e400bc7db4870d786864138af681469693d18c
+  version: 79b0c6888797020a994db17c8510466c72fe75d9
   subpackages:
   - unix
 testImports: []
