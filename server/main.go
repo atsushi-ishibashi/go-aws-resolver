@@ -22,6 +22,7 @@ func main() {
 	e.GET("/ssm/parameter", hdl.SsmParameter)
 	e.GET("/sqs/:queue/url", hdl.SqsQueueURL)
 	e.GET("/elasticache/:rg_id", hdl.ElastiCacheReplicationGroup)
+	e.GET("/secrets_manager/secret", hdl.SecretsManagerSecret)
 
 	e.Logger.Fatal(e.Start(":" + *port))
 }
