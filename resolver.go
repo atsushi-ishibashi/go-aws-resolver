@@ -7,18 +7,20 @@ import (
 )
 
 type Resolver struct {
-	ssmClient         *svc.SsmClient
-	sqsClient         *svc.SqsClient
-	rdsClient         *svc.RdsClient
-	elasticacheClient *svc.ElastiCacheClient
+	ssmClient            *svc.SsmClient
+	sqsClient            *svc.SqsClient
+	rdsClient            *svc.RdsClient
+	elasticacheClient    *svc.ElastiCacheClient
+	secretsManagerClient *svc.SecretsManagerClient
 }
 
 func NewResolver(region string) *Resolver {
 	return &Resolver{
-		ssmClient:         svc.NewSsmClient(region),
-		sqsClient:         svc.NewSqsClient(region),
-		rdsClient:         svc.NewRdsClient(region),
-		elasticacheClient: svc.NewElastiCacheClient(region),
+		ssmClient:            svc.NewSsmClient(region),
+		sqsClient:            svc.NewSqsClient(region),
+		rdsClient:            svc.NewRdsClient(region),
+		elasticacheClient:    svc.NewElastiCacheClient(region),
+		secretsManagerClient: svc.NewSecretsManagerClient(region),
 	}
 }
 
@@ -88,4 +90,14 @@ func (r *Resolver) GetElastiCacheReplicationGroup(replicationGroupID string) (*G
 	}
 	result.NodeGroups = replicas
 	return result, nil
+}
+
+func (r *Resolver) GetSecretsManagerSecret(name string) (*GetSecretsManagerSecretOutput, error) {
+	resp, err := r.secretsManagerClient.GetSecretValue(name)
+	if err != nil {
+		return nil, err
+	}
+	return &GetSecretsManagerSecretOutput{
+		Value: *resp.SecretString,
+	}, nil
 }

@@ -5,4 +5,5 @@ type ResolverIface interface {
 	GetSqsQueueURL(queue string) (*GetSqsQueueURLOutput, error)
 	GetRdsCluster(cluster string) (*GetRdsClusterOutput, error)
 	GetElastiCacheReplicationGroup(replicationGroupID string) (*GetElastiCacheReplicationGroupOutput, error)
+	GetSecretsManagerSecret(name string) (*GetSecretsManagerSecretOutput, error)
 }

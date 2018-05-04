@@ -54,3 +54,12 @@ func (h *APIHandler) ElastiCacheReplicationGroup(c echo.Context) error {
 	}
 	return c.JSON(http.StatusOK, resp)
 }
+
+//SecretsManagerSecret GET /secrets_manager/secret?name=hoge/fuga, retrun GetSecretsManagerSecretOutput
+func (h *APIHandler) SecretsManagerSecret(c echo.Context) error {
+	resp, err := h.resolver.GetSecretsManagerSecret(c.QueryParam("name"))
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return c.JSON(http.StatusOK, resp)
+}

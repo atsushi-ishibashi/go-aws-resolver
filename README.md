@@ -69,3 +69,13 @@ required policy:
 "Action": "elasticache:DescribeReplicationGroups",
 "Resource": "*"
 ```
+```
+GetSecretsManagerSecret(name string) (*GetSecretsManagerSecretOutput, error)
+
+required policy:
+"Action": "secretsmanager:GetSecretValue",
+"Resource": "arn:aws:secretsmanager:<region>:<account>:secret:<name>"
+(only if you encrypt value with KMS)
+"Action": "kms:Decrypt",
+"Resource": "arn:aws:kms:<region>:<account>:key/<key_id>"
+```

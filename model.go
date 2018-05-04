@@ -24,3 +24,7 @@ type ElastiCacheNodeGroup struct {
 	PrimaryEndpoint  string   `json:"configuration_endpoint,omitempty"`
 	ReplicaEndpoints []string `json:"replica_endpoints,omitempty"`
 }
+
+type GetSecretsManagerSecretOutput struct {
+	Value string `json:"value"`
+}
