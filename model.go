@@ -28,3 +28,7 @@ type ElastiCacheNodeGroup struct {
 type GetSecretsManagerSecretOutput struct {
 	Value string `json:"value"`
 }
+
+type GetKMSKeyIDOutput struct {
+	KeyID string `json:"key_id"`
+}

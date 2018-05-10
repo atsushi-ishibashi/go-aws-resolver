@@ -63,3 +63,12 @@ func (h *APIHandler) SecretsManagerSecret(c echo.Context) error {
 	}
 	return c.JSON(http.StatusOK, resp)
 }
+
+//KMSKeyID GET /kms/key?alias=alias/hoge, retrun GetKMSKeyIDOutput
+func (h *APIHandler) KMSKeyID(c echo.Context) error {
+	resp, err := h.resolver.GetKMSKeyID(c.QueryParam("alias"))
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return c.JSON(http.StatusOK, resp)
+}

@@ -17,3 +17,4 @@ curl localhost:8989/rds/hoge
 |GET|/sqs/:queue/url|GetSqsQueueURLOutput|
 |GET|/elasticache/:rg_id|GetElastiCacheReplicationGroupOutput|
 |GET|/secrets_manager/secret?name=<name>|GetSecretsManagerSecretOutput|
+|GET|/kms/key?alias=<name>|GetKMSKeyIDOutput|

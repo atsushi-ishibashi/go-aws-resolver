@@ -12,6 +12,7 @@ type Resolver struct {
 	rdsClient            *svc.RdsClient
 	elasticacheClient    *svc.ElastiCacheClient
 	secretsManagerClient *svc.SecretsManagerClient
+	kmsClient            *svc.KMSClient
 }
 
 func NewResolver(region string) *Resolver {
@@ -21,6 +22,7 @@ func NewResolver(region string) *Resolver {
 		rdsClient:            svc.NewRdsClient(region),
 		elasticacheClient:    svc.NewElastiCacheClient(region),
 		secretsManagerClient: svc.NewSecretsManagerClient(region),
+		kmsClient:            svc.NewKMSClient(region),
 	}
 }
 
@@ -100,4 +102,16 @@ func (r *Resolver) GetSecretsManagerSecret(name string) (*GetSecretsManagerSecre
 	return &GetSecretsManagerSecretOutput{
 		Value: *resp.SecretString,
 	}, nil
+}
+
+func (r *Resolver) GetKMSKeyID(alias string) (*GetKMSKeyIDOutput, error) {
+	resp, err := r.kmsClient.GetKey(alias)
+	if err != nil {
+		return nil, err
+	}
+	result := &GetKMSKeyIDOutput{}
+	if resp.KeyMetadata != nil && resp.KeyMetadata.KeyId != nil {
+		result.KeyID = *resp.KeyMetadata.KeyId
+	}
+	return result, nil
 }
