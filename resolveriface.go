@@ -6,4 +6,5 @@ type ResolverIface interface {
 	GetRdsCluster(cluster string) (*GetRdsClusterOutput, error)
 	GetElastiCacheReplicationGroup(replicationGroupID string) (*GetElastiCacheReplicationGroupOutput, error)
 	GetSecretsManagerSecret(name string) (*GetSecretsManagerSecretOutput, error)
+	GetKMSKeyID(alias string) (*GetKMSKeyIDOutput, error)
 }

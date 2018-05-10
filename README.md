@@ -79,3 +79,10 @@ required policy:
 "Action": "kms:Decrypt",
 "Resource": "arn:aws:kms:<region>:<account>:key/<key_id>"
 ```
+```
+GetKMSKeyID(alias string) (*GetKMSKeyIDOutput, error)
+
+required policy:
+"Action": "kms:DescribeKey",
+"Resource": "arn:aws:kms:<region>:<account>:key/<key_id>"
+```

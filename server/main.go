@@ -23,6 +23,7 @@ func main() {
 	e.GET("/sqs/:queue/url", hdl.SqsQueueURL)
 	e.GET("/elasticache/:rg_id", hdl.ElastiCacheReplicationGroup)
 	e.GET("/secrets_manager/secret", hdl.SecretsManagerSecret)
+	e.GET("/kms/key", hdl.KMSKeyID)
 
 	e.Logger.Fatal(e.Start(":" + *port))
 }
