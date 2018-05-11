@@ -4,5 +4,6 @@ ignore:
 - github.com/atsushi-ishibashi/go-aws-resolver/svc
 import:
 - package: github.com/labstack/echo
+  version: ^3.3.5
   subpackages:
   - middleware

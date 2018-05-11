@@ -15,7 +15,9 @@ func main() {
 
 	e := echo.New()
 	e.HideBanner = true
+	e.HidePort = true
 	e.Use(middleware.Recover())
+	e.Use(middleware.Logger())
 
 	hdl := handler.NewAPIHandler(*region)
 	e.GET("/rds/:cluster", hdl.RdsCluster)
