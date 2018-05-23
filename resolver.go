@@ -1,6 +1,7 @@
 package awsresolver
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/atsushi-ishibashi/go-aws-resolver/svc"
@@ -99,8 +100,12 @@ func (r *Resolver) GetSecretsManagerSecret(name string) (*GetSecretsManagerSecre
 	if err != nil {
 		return nil, err
 	}
+	secVals := make(map[string]string)
+	if err := json.Unmarshal([]byte(*resp.SecretString), &secVals); err != nil {
+		return nil, err
+	}
 	return &GetSecretsManagerSecretOutput{
-		Value: *resp.SecretString,
+		Values: secVals,
 	}, nil
 }
 
